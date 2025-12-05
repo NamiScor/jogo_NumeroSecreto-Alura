@@ -1,0 +1,30 @@
+let titulo = document.querySelector('h1');        /*seleciona a propriedade em HTML na estrutura*/
+titulo.innerHTML = "Advinhe o número secreto";    /*manipula a propriedade em HTMl para atribuir texto*/
+
+let paragrafo = document.querySelector('p');
+paragrafo.innerHTML = "Escolha um número de 1 a 10";
+
+Documentação para retirar o erro apresentado no console ao usar 
+a biblioteca do ResponsiveVoice
+
+ if ('speechSynthesis' in window) {
+        let utterance = new SpeechSynthesisUtterance(texto);
+        utterance.lang = 'pt-BR'; 
+        utterance.rate = 1.2; 
+        window.speechSynthesis.speak(utterance); 
+    } else {
+        console.log("Web Speech API não suportada neste navegador.");
+    }
+
+function exibirTextoNaTela(tag, texto) {
+    let campo = document.querySelector(tag);
+    campo.innerHTML = texto;
+    if ('speechSynthesis' in window) {
+        let utterance = new SpeechSynthesisUtterance(texto);
+        utterance.lang = 'pt-BR'; 
+        utterance.rate = 1.2; 
+        window.speechSynthesis.speak(utterance); 
+    } else {
+        console.log("Web Speech API não suportada neste navegador.");
+    }
+}
