@@ -12,8 +12,18 @@ let tentativas = 1;
 function exibicao (tag, texto){
     let campo = document.querySelector(tag);   // concatena os comandos    
     campo.innerHTML = texto;
-    responsiveVoice.speak(texto, 'Brazilian Portuguese Female', {rate:1.3});  // faz a leitura do texto com áudio
-    // outros idiomas: Italian Female, Spanish Female
+    
+    /* modo alternativo para a extensão do Responsive Voice funcione em todos os navegadores */
+    //responsiveVoice.speak(texto, 'Brazilian Portuguese Female', {rate:1.3}); ->  modo simplificado do código / faz a leitura do texto com áudio
+     if ('speechSynthesis' in window) {  
+        let utterance = new SpeechSynthesisUtterance(texto);
+        utterance.lang = 'pt-BR'; 
+        utterance.rate = 1.2; 
+        window.speechSynthesis.speak(utterance); 
+    } else {
+        console.log("Web Speech API não suportada neste navegador.");
+    }
+    // outros idiomas: Spanish Female
 }
 exibicao ('h1',"Advinhe o número secreto" );
 exibicao ('p', "Escolha um número de 1 a 10");
@@ -69,4 +79,5 @@ function reiniciarJogo(){
     exibicao ('h1',"Advinhe o novo número secreto" );
     exibicao ('p', 'Escolha um número de 1 a 10');
     document.getElementById('reiniciar').setAttribute ('disabled', true);
+
 }
