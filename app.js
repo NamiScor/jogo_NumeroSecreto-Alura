@@ -13,7 +13,7 @@ function exibicao (tag, texto){
     let campo = document.querySelector(tag);   // concatena os comandos    
     campo.innerHTML = texto;
     
-    /* modo alternativo para a extensão do Responsive Voice funcione em todos os navegadores */
+    /* modo alternativo para o uso do Responsive Voice funcione em todos os navegadores */
     //responsiveVoice.speak(texto, 'Brazilian Portuguese Female', {rate:1.3}); ->  modo simplificado do código / faz a leitura do texto com áudio
      if ('speechSynthesis' in window) {  
         let utterance = new SpeechSynthesisUtterance(texto);
@@ -81,3 +81,4 @@ function reiniciarJogo(){
     document.getElementById('reiniciar').setAttribute ('disabled', true);
 
 }
+
