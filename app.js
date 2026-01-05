@@ -1,11 +1,11 @@
 let lista = [];  
 
-/* array = lista e pode recber qualquer (string, números, objetos e outras arrays...), 
+/* array = lista e pode receber qualquer tipo de valor (string, números, objetos e outras arrays...), 
 sua contagem -indice- inicia-se a partir do zero,
 para adicionar algo a mais na lista usa o PUSH
 para remover algo nha lista usa o POP*/
 
-let limite = 10; //podemos alterar para quantos números posso sortear
+let limite = 10; //podemos alterar para quantos números poderá ser sorteado
 let numAleatorio = aleatorio();
 let tentativas = 1;
 
@@ -81,5 +81,6 @@ function reiniciarJogo(){
     document.getElementById('reiniciar').setAttribute ('disabled', true);
 
 }
+
 
 
